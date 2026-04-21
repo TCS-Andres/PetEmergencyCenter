@@ -1089,6 +1089,66 @@ img { max-width: 100%; display: block; }
 html { scroll-behavior: smooth; scroll-padding-top: 120px; }
 
 /* ================================================
+   PRELOADER — branded, heartbeat ECG trace
+================================================ */
+.pec-preloader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: radial-gradient(ellipse at 50% 40%, #0E3A5F 0%, #07213A 70%, #061628 100%);
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity .45s var(--pec-ease), visibility .45s;
+}
+.pec-preloader--hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.pec-preloader__inner {
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  animation: pec-preloader-in .6s var(--pec-ease) both;
+}
+@keyframes pec-preloader-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.pec-preloader__logo {
+  height: 44px; width: auto;
+  filter: brightness(0) invert(1);
+  animation: pec-preloader-breathe 1.8s ease-in-out infinite;
+}
+@keyframes pec-preloader-breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.75; transform: scale(0.97); }
+}
+.pec-preloader__ecg {
+  width: 260px; height: 48px;
+  overflow: visible;
+}
+.pec-preloader__ecg path.track {
+  stroke: rgba(127,184,214,0.18);
+  stroke-width: 2;
+  fill: none;
+}
+.pec-preloader__ecg path.trace {
+  stroke: var(--pec-accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  stroke-dasharray: 70 300;
+  animation: pec-ecg-sweep 1.6s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(196,30,42,0.6));
+}
+@keyframes pec-ecg-sweep {
+  from { stroke-dashoffset: 370; }
+  to   { stroke-dashoffset: 0; }
+}
+.pec-preloader__label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(217,231,242,0.55);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pec-preloader__logo { animation: none; }
+  .pec-preloader__ecg path.trace { animation: none; stroke-dasharray: none; }
+}
+
+/* ================================================
    EDITORIAL IMAGERY
 ================================================ */
 .pec-frame-img { width: 100%; height: 100%; display: block; object-fit: cover; position: absolute; inset: 0; }

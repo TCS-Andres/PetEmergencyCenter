@@ -1,6 +1,28 @@
 (function () {
   'use strict';
 
+  // ---- Preloader ----
+  (function initPreloader() {
+    var preloader = document.getElementById('pec-preloader');
+    if (!preloader) return;
+    var start = Date.now();
+    var minShow = 500;
+    var hidden = false;
+    function hide() {
+      if (hidden) return;
+      hidden = true;
+      var elapsed = Date.now() - start;
+      var delay = Math.max(0, minShow - elapsed);
+      setTimeout(function () {
+        preloader.classList.add('pec-preloader--hidden');
+        setTimeout(function () { preloader.parentNode && preloader.parentNode.removeChild(preloader); }, 500);
+      }, delay);
+    }
+    if (document.readyState === 'complete') hide();
+    else window.addEventListener('load', hide);
+    setTimeout(hide, 2500); // failsafe
+  })();
+
   // ---- Nav scroll state + sticky telehealth float ----
   var nav = document.querySelector('.pec-nav');
   var teleFloat = document.querySelector('.pec-tele-float');
