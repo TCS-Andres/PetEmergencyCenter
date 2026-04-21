@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  // Nav scroll state
+  // ---- Nav scroll state + sticky telehealth float ----
   var nav = document.querySelector('.pec-nav');
   var teleFloat = document.querySelector('.pec-tele-float');
   function onScroll() {
@@ -12,14 +12,64 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // FAQ accordion — single-open behavior, first item open by default
+  // ---- FAQ accordion ----
   var faqItems = document.querySelectorAll('.pec-faq__item');
   faqItems.forEach(function (item) {
     item.addEventListener('click', function () {
       var wasOpen = item.classList.contains('pec-faq__item--open');
-      faqItems.forEach(function (other) { other.classList.remove('pec-faq__item--open'); });
-      if (!wasOpen) item.classList.add('pec-faq__item--open');
-      item.setAttribute('aria-expanded', String(!wasOpen));
+      faqItems.forEach(function (other) {
+        other.classList.remove('pec-faq__item--open');
+        other.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('pec-faq__item--open');
+        item.setAttribute('aria-expanded', 'true');
+      }
     });
   });
+
+  // ---- Scroll reveal with IntersectionObserver ----
+  var targets = document.querySelectorAll(
+    '.pec-section-head, .pec-empathy__body, ' +
+    '.pec-step, .pec-whycard, .pec-svc, ' +
+    '.pec-tele__copy > *, .pec-tele__side, ' +
+    '.pec-animal, .pec-review, ' +
+    '.pec-area__copy, .pec-area__cities, ' +
+    '.pec-faq__head, .pec-faq__item, ' +
+    '.pec-final__copy, .pec-contact-card'
+  );
+
+  // Apply stagger delay inside grids (steps, why-cards, services, animals, reviews, FAQ, pills)
+  function staggerChildren(selector) {
+    document.querySelectorAll(selector).forEach(function (child, i) {
+      child.classList.add('pec-reveal');
+      child.setAttribute('data-delay', String(Math.min(i, 6)));
+    });
+  }
+  staggerChildren('.pec-how__grid > .pec-step');
+  staggerChildren('.pec-why__grid > .pec-whycard');
+  staggerChildren('.pec-services__grid > .pec-svc');
+  staggerChildren('.pec-animals__grid > .pec-animal');
+  staggerChildren('.pec-reviews__grid > .pec-review');
+  staggerChildren('.pec-faq__list > .pec-faq__item');
+
+  // Non-grid sections just get the reveal class
+  targets.forEach(function (el) {
+    if (!el.classList.contains('pec-reveal')) el.classList.add('pec-reveal');
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.pec-reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    // Fallback: just show everything
+    document.querySelectorAll('.pec-reveal').forEach(function (el) { el.classList.add('is-in'); });
+  }
 })();
