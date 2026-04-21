@@ -6,7 +6,7 @@
     var preloader = document.getElementById('pec-preloader');
     if (!preloader) return;
     var start = Date.now();
-    var minShow = 500;
+    var minShow = 1500;
     var hidden = false;
     function hide() {
       if (hidden) return;
@@ -20,7 +20,7 @@
     }
     if (document.readyState === 'complete') hide();
     else window.addEventListener('load', hide);
-    setTimeout(hide, 2500); // failsafe
+    setTimeout(hide, 3500); // failsafe
   })();
 
   // ---- Nav scroll state + sticky telehealth float ----
