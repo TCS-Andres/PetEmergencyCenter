@@ -1,0 +1,331 @@
+/* ================================================
+   TELEMEDICINE PAGE — page-specific additions.
+   Loads after homepage.css and reuses its tokens.
+================================================ */
+
+/* Hero variant: wider copy column, softer background */
+.pec-tele-hero { background: var(--pec-sky-bg); padding: 96px 0 0; position: relative; overflow: hidden; }
+.pec-tele-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 85% 20%, rgba(127,184,214,0.45), transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(14,58,95,0.1), transparent 50%);
+  pointer-events: none;
+  animation: pec-drift 22s ease-in-out infinite alternate;
+}
+.pec-tele-hero__inner { position: relative; z-index: 1; max-width: var(--pec-wrap); margin: 0 auto; padding: 0 var(--pec-pad); }
+.pec-tele-hero__grid {
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: center;
+}
+.pec-tele-hero .pec-h1 { max-width: none; font-size: clamp(36px, 4vw, 56px); line-height: 1.08; }
+.pec-tele-hero__sub {
+  font-size: clamp(16px, 1.1vw, 19px);
+  line-height: 1.65;
+  color: var(--pec-ink-2);
+  margin: 24px 0 36px;
+  max-width: 600px;
+}
+.pec-tele-hero__cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px; }
+.pec-tele-hero__note {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; color: var(--pec-muted);
+}
+
+/* Hero visual: stacked cards showing a video consult */
+.pec-tele-hero__visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  width: 100%;
+  border-radius: var(--pec-r-xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, #B8DAEB 0%, #7FB8D6 55%, #0E3A5F 100%);
+  box-shadow: var(--pec-shadow-lg);
+  animation: pec-float 6s ease-in-out infinite;
+}
+.pec-tele-hero__screen {
+  position: absolute; inset: 18% 12% 22% 12%;
+  background: #fff;
+  border-radius: var(--pec-r-lg);
+  box-shadow: 0 24px 48px -16px rgba(0,0,0,0.35);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.pec-tele-hero__screen-bar {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 14px; background: #F5F8FB; border-bottom: 1px solid var(--pec-line);
+}
+.pec-tele-hero__screen-bar i {
+  display: block; width: 10px; height: 10px; border-radius: 50%;
+  background: #D9E3EC;
+}
+.pec-tele-hero__screen-bar i:nth-child(1) { background: #F47171; }
+.pec-tele-hero__screen-bar i:nth-child(2) { background: #F5B800; }
+.pec-tele-hero__screen-bar i:nth-child(3) { background: #5ACB70; }
+.pec-tele-hero__screen-body {
+  flex: 1; position: relative;
+  background: radial-gradient(ellipse at 30% 30%, #B8DAEB, #7FB8D6 70%);
+  display: flex; align-items: flex-end; justify-content: center; padding-bottom: 20px;
+}
+.pec-tele-hero__vet-pip {
+  position: absolute; top: 12px; right: 12px;
+  width: 28%; aspect-ratio: 1/1.1;
+  background: linear-gradient(135deg, #0E3A5F, #07213A);
+  border: 2px solid #fff;
+  border-radius: var(--pec-r);
+  display: flex; align-items: center; justify-content: center;
+  color: #D9E7F2;
+  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px;
+}
+.pec-tele-hero__callout {
+  position: absolute; right: -12px; bottom: 36px;
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: var(--pec-r-lg);
+  box-shadow: 0 24px 48px -16px rgba(0,0,0,0.35);
+  max-width: 220px;
+  animation: pec-fade-in 0.7s 0.5s var(--pec-ease) both;
+}
+.pec-tele-hero__callout-top {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--pec-accent);
+  margin-bottom: 4px;
+}
+.pec-tele-hero__callout-big {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px; font-weight: 800; color: var(--pec-ink); line-height: 1.15;
+}
+.pec-tele-hero__callout-sub { display: block; font-size: 12px; color: var(--pec-muted); margin-top: 4px; }
+
+/* Scenario cards — Who Telehealth Is For (4 cards, 2x2) */
+.pec-scenarios { padding: var(--pec-sec-pad-y) 0; background: #fff; }
+.pec-scenarios__grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.pec-scenario {
+  background: #fff;
+  border: 1px solid var(--pec-line);
+  border-radius: var(--pec-r-lg);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s var(--pec-ease), box-shadow .4s ease, border-color .3s ease;
+}
+.pec-scenario::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+  background: linear-gradient(180deg, var(--pec-accent), var(--pec-sky));
+  transform: scaleY(0); transform-origin: top;
+  transition: transform .5s var(--pec-ease);
+}
+.pec-scenario:hover { transform: translateY(-6px); box-shadow: var(--pec-shadow); border-color: var(--pec-sky-2); }
+.pec-scenario:hover::before { transform: scaleY(1); }
+.pec-scenario__n {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+  color: var(--pec-accent);
+  padding: 6px 12px;
+  background: rgba(196,30,42,0.08);
+  border-radius: 100px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.pec-scenario h3 { margin-bottom: 12px; font-size: 22px; line-height: 1.3; }
+.pec-scenario p { color: var(--pec-muted); margin: 0; font-size: 16px; line-height: 1.65; }
+
+/* Coverage — What we can do / What we can't */
+.pec-coverage { padding: var(--pec-sec-pad-y) 0; background: var(--pec-sky-bg); }
+.pec-coverage__intro { max-width: 780px; font-size: 18px; line-height: 1.65; color: var(--pec-ink-2); margin-top: 16px; }
+.pec-coverage__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  margin-top: 48px;
+}
+.pec-coverage__col {
+  background: #fff;
+  border: 1px solid var(--pec-line);
+  border-radius: var(--pec-r-lg);
+  padding: 36px;
+  box-shadow: var(--pec-shadow-sm);
+}
+.pec-coverage__h {
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800; font-size: 22px; line-height: 1.3;
+  margin: 0 0 24px;
+}
+.pec-coverage__col--can .pec-coverage__h { color: var(--pec-navy); }
+.pec-coverage__col--cant .pec-coverage__h { color: var(--pec-ink-2); }
+.pec-coverage__badge {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+}
+.pec-coverage__badge--check { background: rgba(90,203,112,0.18); color: #2E8B4A; }
+.pec-coverage__badge--x { background: rgba(196,30,42,0.12); color: var(--pec-accent); }
+.pec-coverage__list { list-style: none; margin: 0; padding: 0; }
+.pec-coverage__list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--pec-line);
+  color: var(--pec-ink-2); font-size: 15px; line-height: 1.55;
+}
+.pec-coverage__list li:last-child { border-bottom: none; }
+.pec-coverage__list li strong { color: var(--pec-ink); font-weight: 700; }
+.pec-coverage__list li svg { flex: 0 0 auto; margin-top: 3px; }
+.pec-coverage__list--can li svg { color: #2E8B4A; }
+.pec-coverage__list--cant li svg { color: var(--pec-accent); }
+.pec-coverage__foot {
+  max-width: 820px; margin: 40px auto 0;
+  text-align: center;
+  font-size: 17px; line-height: 1.65; color: var(--pec-ink-2);
+  padding: 24px 28px;
+  background: #fff;
+  border-radius: var(--pec-r-lg);
+  border: 1px solid var(--pec-line);
+}
+.pec-coverage__foot strong { color: var(--pec-accent); }
+
+/* $75 Credit hero block — the single most important sentence */
+.pec-credit {
+  padding: var(--pec-sec-pad-y) 0;
+  background: var(--pec-navy-2);
+  background-image:
+    radial-gradient(ellipse at 100% 0%, rgba(127,184,214,0.28), transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(196,30,42,0.18), transparent 45%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.pec-credit__lead {
+  max-width: 820px; margin: 0 auto 48px;
+  text-align: center;
+  color: #D9E7F2; font-size: 19px; line-height: 1.65;
+}
+.pec-credit__panel {
+  max-width: 960px; margin: 0 auto;
+  background: linear-gradient(135deg, #0E3A5F, #07213A);
+  border: 1px solid rgba(127,184,214,0.25);
+  border-radius: var(--pec-r-xl);
+  padding: 56px 48px;
+  position: relative;
+  box-shadow: var(--pec-shadow-lg);
+  overflow: hidden;
+}
+.pec-credit__panel::before {
+  content: "$75";
+  position: absolute;
+  top: -40px; right: -10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 320px; font-weight: 900;
+  line-height: 1;
+  color: rgba(127,184,214,0.08);
+  pointer-events: none;
+  letter-spacing: -0.05em;
+}
+.pec-credit__badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--pec-sky);
+  background: rgba(127,184,214,0.12);
+  padding: 8px 14px; border-radius: 100px;
+  margin-bottom: 24px;
+  position: relative;
+}
+.pec-credit__h {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(28px, 3vw, 42px); font-weight: 900;
+  line-height: 1.15; letter-spacing: -0.02em;
+  color: #fff; margin: 0 0 20px;
+  max-width: 780px;
+  position: relative;
+}
+.pec-credit__h em {
+  color: var(--pec-accent);
+  font-style: normal;
+  position: relative;
+}
+.pec-credit__h em::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 8px;
+  background: rgba(196,30,42,0.3); border-radius: 3px; z-index: -1;
+}
+.pec-credit__p {
+  color: #B8CDDE; font-size: 17px; line-height: 1.65;
+  margin: 0 0 32px; max-width: 680px;
+  position: relative;
+}
+.pec-credit .pec-btn { position: relative; }
+
+/* What to expect — checklist grid */
+.pec-expect { padding: var(--pec-sec-pad-y) 0; background: #fff; }
+.pec-expect__grid {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start;
+}
+.pec-expect__copy p { color: var(--pec-ink-2); font-size: 17px; line-height: 1.7; margin: 20px 0; }
+.pec-expect__card {
+  background: var(--pec-sky-bg);
+  border: 1px solid var(--pec-line);
+  border-radius: var(--pec-r-lg);
+  padding: 36px;
+}
+.pec-expect__card-h {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--pec-navy);
+  margin: 0 0 20px;
+}
+.pec-expect__list { list-style: none; padding: 0; margin: 0; }
+.pec-expect__list li {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--pec-line);
+  font-size: 16px; line-height: 1.55; color: var(--pec-ink);
+}
+.pec-expect__list li:last-child { border-bottom: none; }
+.pec-expect__list li::before {
+  content: ""; flex: 0 0 auto;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #fff; border: 2px solid var(--pec-sky);
+  margin-top: 2px;
+  position: relative;
+}
+.pec-expect__foot {
+  margin-top: 40px; max-width: 860px;
+  padding: 24px 28px;
+  background: var(--pec-sky-bg);
+  border-left: 4px solid var(--pec-accent);
+  border-radius: 0 var(--pec-r) var(--pec-r) 0;
+  color: var(--pec-ink-2);
+  font-size: 16px; line-height: 1.65;
+}
+
+/* Trust signals row near hero */
+.pec-tele-trust {
+  display: flex; flex-wrap: wrap; gap: 28px;
+  padding-top: 32px; margin-top: 24px;
+  border-top: 1px solid var(--pec-line);
+}
+.pec-tele-trust__item {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 14px; color: var(--pec-navy);
+}
+.pec-tele-trust__item svg { color: var(--pec-accent); flex: 0 0 auto; }
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .pec-tele-hero__grid { grid-template-columns: 1fr; gap: 48px; }
+  .pec-scenarios__grid { grid-template-columns: 1fr; }
+  .pec-coverage__grid { grid-template-columns: 1fr; }
+  .pec-expect__grid { grid-template-columns: 1fr; gap: 36px; }
+  .pec-credit__panel { padding: 44px 32px; }
+  .pec-credit__panel::before { font-size: 200px; top: -20px; }
+}
+@media (max-width: 640px) {
+  .pec-tele-hero { padding-top: 48px; }
+  .pec-tele-hero__callout { right: 12px; bottom: 20px; max-width: 180px; padding: 14px 16px; }
+  .pec-scenario, .pec-coverage__col, .pec-expect__card { padding: 28px; }
+  .pec-credit__panel { padding: 36px 24px; }
+  .pec-credit__panel::before { display: none; }
+}
