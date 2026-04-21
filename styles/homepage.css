@@ -76,7 +76,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.015em;
 }
 
-.pec-h1 { font-size: clamp(36px, 3.8vw, 50px); line-height: 1.1; font-weight: 900; letter-spacing: -0.025em; margin-bottom: 0; max-width: 620px; text-wrap: balance; }
+.pec-h1 { font-size: clamp(34px, 3.4vw, 46px); line-height: 1.1; font-weight: 900; letter-spacing: -0.025em; margin-bottom: 0; max-width: 720px; text-wrap: balance; }
 .pec-h1__accent { color: var(--pec-navy); font-style: italic; font-weight: 900; position: relative; white-space: nowrap; }
 .pec-h1__accent::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
@@ -178,9 +178,9 @@ img { max-width: 100%; display: block; }
 .pec-nav--scrolled { box-shadow: 0 2px 0 0 rgba(0,0,0,0.04), 0 10px 30px -20px rgba(0,0,0,0.2); }
 
 .pec-nav__inner {
-  max-width: var(--pec-wrap); margin: 0 auto;
-  padding: 14px var(--pec-pad);
-  display: flex; align-items: center; gap: 32px;
+  max-width: 1440px; margin: 0 auto;
+  padding: 14px 32px;
+  display: flex; align-items: center; gap: 28px;
 }
 
 .pec-logo { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; flex: 0 0 auto; line-height: 1; }
@@ -191,11 +191,12 @@ img { max-width: 100%; display: block; }
 .pec-logo--footer .pec-logo__img { height: 40px; }
 .pec-logo--footer .pec-logo__tag { color: #6A85A0; }
 
-.pec-nav__links { display: flex; gap: 28px; flex: 1 1 auto; justify-content: center; align-items: center; }
+.pec-nav__links { display: flex; gap: 22px; flex: 1 1 auto; justify-content: center; align-items: center; white-space: nowrap; }
 .pec-nav__links > a,
 .pec-nav__toggle {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600; font-size: 14px; letter-spacing: 0.01em;
+  white-space: nowrap;
   color: var(--pec-ink);
   position: relative; padding: 6px 0;
   background: none; border: none; cursor: pointer;
@@ -302,7 +303,7 @@ img { max-width: 100%; display: block; }
 .pec-hero__grid {
   max-width: var(--pec-wrap); margin: 0 auto;
   padding: 0 var(--pec-pad);
-  display: grid; grid-template-columns: 1.05fr 1fr; gap: 72px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px;
   align-items: center;
 }
 .pec-hero--stacked .pec-hero__grid { grid-template-columns: 1fr; text-align: center; }
@@ -426,7 +427,10 @@ img { max-width: 100%; display: block; }
   background: #fff;
   position: relative;
 }
-.pec-empathy .pec-wrap { max-width: 880px; }
+.pec-empathy .pec-wrap { max-width: var(--pec-wrap); }
+.pec-empathy__grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center; }
+.pec-empathy__copy { max-width: 680px; }
+.pec-empathy__media img { border-radius: var(--pec-r-xl); }
 .pec-empathy__eyebrow {
   font-family: 'Montserrat', sans-serif; font-weight: 600;
   font-size: 13px; color: var(--pec-muted); letter-spacing: 0.1em;
@@ -656,9 +660,18 @@ img { max-width: 100%; display: block; }
   background: rgba(0,0,0,0.18);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--pec-r-lg);
-  padding: 36px;
+  padding: 0;
+  overflow: hidden;
 }
-.pec-tele__side-head { margin-bottom: 22px; font-size: 20px; }
+.pec-tele__side-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.pec-tele__side-head { margin: 28px 28px 22px; font-size: 20px; }
+.pec-tele__side .pec-tele__list { padding: 0 28px 28px; }
 .pec-tele__list { list-style: none; padding: 0; margin: 0; }
 .pec-tele__list li {
   display: flex; align-items: flex-start; gap: 12px;
