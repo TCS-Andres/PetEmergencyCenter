@@ -142,12 +142,76 @@
       </a>
       <a href="#book" class="pec-btn pec-btn--primary pec-btn--sm">Book Telehealth</a>
     </div>
+
+    <button type="button" class="pec-nav__burger" aria-label="Open menu" aria-controls="pec-mobile-menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
   <div class="pec-openstrip">
     <span class="pec-pulse"></span> <strong>Open now</strong> <span class="pec-sep">·</span>
     Weeknights 5PM–8AM <span class="pec-sep">·</span> Weekends &amp; Holidays 24/7
   </div>
 </header>
+
+<div id="pec-mobile-menu" class="pec-mobile-menu" role="dialog" aria-modal="true" aria-label="Main menu">
+  <div class="pec-mobile-menu__top">
+    <a href="/" class="pec-mobile-menu__logo" aria-label="Pet Emergency Center home">
+      <img src="../pec-logo.png" alt="Pet Emergency Center">
+    </a>
+    <button type="button" class="pec-mobile-menu__close" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="pec-mobile-menu__nav" aria-label="Mobile main">
+    <a href="/">Home</a>
+    <details class="pec-mobile-menu__drop">
+      <summary>About</summary>
+      <div class="pec-mobile-menu__sub">
+        <a href="/our-team/">Our Team</a>
+        <a href="/our-story/">Our Story</a>
+      </div>
+    </details>
+    <details class="pec-mobile-menu__drop" open>
+      <summary>Services</summary>
+      <div class="pec-mobile-menu__sub">
+        <a href="/emergency-critical-care/">Emergency &amp; Critical Care</a>
+        <a href="/emergency-surgery/">Emergency Surgery</a>
+        <a href="/telemedicine/">Telemedicine</a>
+        <a href="/pain-management/">Pain Management</a>
+        <a href="/diagnostics/">Diagnostics</a>
+        <a href="/pharmacy-services/">Pharmacy Services</a>
+      </div>
+    </details>
+    <details class="pec-mobile-menu__drop">
+      <summary>Resources</summary>
+      <div class="pec-mobile-menu__sub">
+        <a href="/common-emergencies/">Common Emergencies</a>
+        <a href="/pet-emergency-tips/">Pet Emergency Tips</a>
+        <a href="/seasonal-tip/">Seasonal Health Tip</a>
+        <a href="/payment-plans/">Payment Plans</a>
+        <a href="/blog/">Blog</a>
+      </div>
+    </details>
+    <a href="/contact-us/">Contact Us</a>
+  </nav>
+  <div class="pec-mobile-menu__cta">
+    <a href="tel:9547720420" class="pec-btn pec-btn--primary pec-btn--lg">
+      <svg width="20" height="20" aria-hidden="true"><use href="#i-phone"/></svg>
+      Call (954) 772-0420
+    </a>
+    <a href="#book" class="pec-btn pec-btn--white pec-btn--lg">
+      <svg width="20" height="20" aria-hidden="true"><use href="#i-video"/></svg>
+      Book Telehealth
+    </a>
+  </div>
+</div>
 
 <main id="main">
 

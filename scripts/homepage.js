@@ -23,6 +23,28 @@
     setTimeout(hide, 3500); // failsafe
   })();
 
+  // ---- Mobile hamburger menu ----
+  (function initMobileMenu() {
+    var burger = document.querySelector('.pec-nav__burger');
+    var menu = document.getElementById('pec-mobile-menu');
+    if (!burger || !menu) return;
+    var closeBtn = menu.querySelector('.pec-mobile-menu__close');
+    function open() {
+      menu.classList.add('pec-mobile-menu--open');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('pec-menu-open');
+    }
+    function close() {
+      menu.classList.remove('pec-mobile-menu--open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('pec-menu-open');
+    }
+    burger.addEventListener('click', open);
+    closeBtn && closeBtn.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    menu.querySelectorAll('a[href]').forEach(function (a) { a.addEventListener('click', close); });
+  })();
+
   // ---- Nav scroll state + sticky telehealth float ----
   var nav = document.querySelector('.pec-nav');
   var teleFloat = document.querySelector('.pec-tele-float');

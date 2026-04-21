@@ -252,7 +252,16 @@
 }
 @media (max-width: 640px) {
   .pec-ec-hero { padding: 48px 0 64px; }
+  .pec-ec-hero__stamp { left: 12px; right: 12px; bottom: 12px; max-width: none; padding: 12px 14px; }
+  .pec-ec-hero__stamp-big { font-size: 16px; }
+  .pec-ec-hero__stamp-sub { font-size: 11px; }
   .pec-ec-urgent { padding: 32px 24px; }
+  .pec-ec-urgent__h { font-size: 22px; }
   .pec-ec-cap, .pec-ec-arrive__card, .pec-ec-bring { padding: 24px; }
   .pec-ec-cap { grid-template-columns: 1fr; gap: 12px; }
+  .pec-ec-card { padding: 24px; }
+  .pec-ec-card h3 { font-size: 17px; }
+  .pec-ec-opener p { font-size: 17px; }
+  .pec-ec-coord p { font-size: 17px; }
+  .pec-ec-tele p { font-size: 16px; }
 }

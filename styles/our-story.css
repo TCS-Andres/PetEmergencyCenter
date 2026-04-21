@@ -301,7 +301,17 @@
 }
 @media (max-width: 640px) {
   .pec-story-hero { padding: 48px 0 64px; }
-  .pec-story-hero__frame-stamp { left: 16px; bottom: 16px; max-width: 200px; padding: 14px 16px; }
+  .pec-story-hero__frame-stamp { left: 12px; right: 12px; bottom: 12px; max-width: none; padding: 12px 14px; }
+  .pec-story-hero__stamp-big { font-size: 16px; }
+  .pec-story-hero__stamp-sub { font-size: 11px; }
   .pec-narrative__body { font-size: 17px; }
-  .pec-principle { padding: 28px; }
+  .pec-principle { padding: 28px 24px; }
+  .pec-pullquote { padding: 28px 24px; margin: 40px auto 8px; border-radius: var(--pec-r-lg); }
+  .pec-pullquote::before { font-size: 120px; top: -18px; left: 12px; }
+  .pec-owner { gap: 24px; padding: 24px 0; }
+  .pec-owner__portrait { aspect-ratio: 1/1; max-width: 320px; margin: 0 auto; }
+  .pec-owner__portrait-initials { font-size: 72px; }
+  .pec-owner__name { font-size: 26px; }
+  .pec-owner__quote { font-size: 17px; padding: 12px 0 12px 20px; }
+  .pec-community p { font-size: 16px; }
 }
