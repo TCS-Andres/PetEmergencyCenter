@@ -6,7 +6,7 @@
     var preloader = document.getElementById('pec-preloader');
     if (!preloader) return;
     var start = Date.now();
-    var minShow = 1500;
+    var minShow = 1000;
     var hidden = false;
     function hide() {
       if (hidden) return;
