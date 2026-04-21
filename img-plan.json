@@ -1,0 +1,81 @@
+{
+  "_notes": "Brand style suffix below is appended to every prompt. Owner portraits for Dr. Kiser and Paige are deliberately NOT in this plan — both copy specs say use real photography for those slots.",
+  "style_suffix": "warm natural daylight, documentary photography, unposed candid feel, Fort Lauderdale Florida setting, calm and trustworthy tone, soft shallow depth of field, navy and sky-blue ambient palette, muted cool cream background tones, authentic and lived-in, never stock-photo glossy, never oversaturated, 35mm prime lens look, subtle film grain, high detail on animal fur or skin texture",
+
+  "images": [
+    {
+      "id": "home-hero",
+      "path": "img/home-hero.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "2K",
+      "output_format": "jpg",
+      "prompt": "A gentle hand resting on the head of a calm golden-coat senior dog, close-up, warm soft indoor light from a window, the dog has trusting brown eyes looking slightly up, the hand is bare and relaxed belonging to an off-camera caregiver, quiet emotional moment, veterinary clinic interior softly blurred in background with navy and sky-blue tones, feels like the pet is being comforted not examined"
+    },
+    {
+      "id": "home-empathy",
+      "path": "img/home-empathy.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "3:2",
+      "resolution": "2K",
+      "output_format": "jpg",
+      "prompt": "Wide interior shot of a quiet emergency veterinary clinic waiting area at night, warm amber lamps, navy blue accent wall, one empty upholstered bench, a soft blanket folded on it, reception desk out of focus in background, no people visible, conveys calm readiness and patience not urgency, Fort Lauderdale local practice feel"
+    },
+    {
+      "id": "home-services-ambient",
+      "path": "img/home-services-ambient.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "output_format": "jpg",
+      "prompt": "Close detail of veterinarian's hands gently holding a stethoscope against a small dog's chest, the dog looks relaxed and curious, clinic light is warm and natural, hands are clean but not overly clinical, soft focus on everything except the point of contact, conveys competent gentle care"
+    },
+    {
+      "id": "home-telehealth-spot",
+      "path": "img/home-telehealth-spot.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "2K",
+      "output_format": "jpg",
+      "prompt": "Over-the-shoulder view of a woman at home in the evening holding her phone vertically, a veterinarian visible on the phone screen in a clinic setting, her calm cat sits on her lap in the frame, soft lamp light in the living room, kitchen blurred in background, Florida casual feel, conveys relief and guidance not panic"
+    },
+
+    {
+      "id": "tele-hero",
+      "path": "img/tele-hero.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "2K",
+      "output_format": "jpg",
+      "prompt": "A pet owner sitting cross-legged on a sunlit living room floor in Florida, cradling her small dog on her lap, tilting her phone toward the dog so the veterinarian on the video call can see, the vet's face is visible on the phone screen wearing navy scrubs, indoor plants softly blurred, conveys calm collaborative consultation"
+    },
+    {
+      "id": "tele-expect",
+      "path": "img/tele-expect.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "3:2",
+      "resolution": "2K",
+      "output_format": "jpg",
+      "prompt": "A calm orange tabby cat lying on a clean bedspread in a well-lit bedroom, morning daylight coming from a side window, phone or tablet leaning against a pillow just outside frame suggesting an active video call, the cat looks relaxed and alert, minimal clutter, conveys a well-prepared telehealth environment at home"
+    },
+
+    {
+      "id": "story-hero",
+      "path": "img/story-hero.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "2K",
+      "output_format": "jpg",
+      "prompt": "Exterior of a modest independently owned veterinary clinic at dusk, a single warm light glowing inside, palm tree silhouettes at the edges, a small sign that says PET EMERGENCY CENTER in understated sans-serif lettering, damp asphalt reflecting the warm window light, blue hour sky fading, conveys a local practice that has been here a long time, Fort Lauderdale residential-commercial street feel, no cars in foreground"
+    },
+    {
+      "id": "story-community",
+      "path": "img/story-community.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "output_format": "jpg",
+      "prompt": "A South Florida neighborhood sidewalk at golden hour, multiple people of different ages walking their dogs in the same direction, a leashed golden retriever in the foreground looking over its shoulder at the camera, palm trees lining the street, warm Fort Lauderdale residential feel, conveys a connected pet-owning community, documentary candid street style, no faces clearly identifiable"
+    }
+  ]
+}

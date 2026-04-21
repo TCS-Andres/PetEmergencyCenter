@@ -1,6 +1,11 @@
 .claude/
 .DS_Store
 
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
 # Internal source docs (not part of the web build)
 PEC_Homepage_Copy.docx
 PEC_MasterBrain_Document*.pdf

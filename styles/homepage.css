@@ -1074,3 +1074,35 @@ img { max-width: 100%; display: block; }
 
 /* Smooth anchor scroll */
 html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+
+/* ================================================
+   EDITORIAL IMAGERY
+================================================ */
+.pec-frame-img { width: 100%; height: 100%; display: block; object-fit: cover; position: absolute; inset: 0; }
+
+.pec-bleed {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pec-pad);
+}
+.pec-bleed__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: var(--pec-r-xl);
+  box-shadow: var(--pec-shadow);
+}
+.pec-bleed--tall .pec-bleed__img { aspect-ratio: 3/2; }
+
+/* Section-side imagery for two-column layouts */
+.pec-side-img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--pec-r-xl);
+  box-shadow: var(--pec-shadow);
+  display: block;
+}
+.pec-side-img--wide { aspect-ratio: 3/2; }
