@@ -1,0 +1,311 @@
+/* ================================================
+   OUR STORY PAGE — editorial, warm, human.
+   Loads after homepage.css and reuses its tokens.
+================================================ */
+
+/* Hero: editorial, warmer, less visual noise than home hero */
+.pec-story-hero {
+  background: var(--pec-sky-bg);
+  padding: 88px 0 96px;
+  position: relative;
+  overflow: hidden;
+}
+.pec-story-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 85% 10%, rgba(127,184,214,0.4), transparent 55%),
+    radial-gradient(ellipse at 0% 90%, rgba(14,58,95,0.1), transparent 50%);
+  pointer-events: none;
+  animation: pec-drift 22s ease-in-out infinite alternate;
+}
+.pec-story-hero__inner {
+  position: relative; z-index: 1;
+  max-width: var(--pec-wrap); margin: 0 auto;
+  padding: 0 var(--pec-pad);
+}
+.pec-story-hero__grid {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 72px; align-items: center;
+}
+.pec-story-hero .pec-h1 {
+  font-size: clamp(36px, 3.9vw, 52px);
+  line-height: 1.1;
+  max-width: 680px;
+}
+.pec-story-hero__sub {
+  font-size: clamp(16px, 1.1vw, 19px);
+  line-height: 1.65;
+  color: var(--pec-ink-2);
+  margin: 24px 0 32px;
+  max-width: 600px;
+}
+.pec-story-hero__cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 8px; }
+.pec-story-trust {
+  display: flex; flex-wrap: wrap; gap: 14px 24px;
+  padding-top: 28px; margin-top: 20px;
+  border-top: 1px solid var(--pec-line);
+}
+.pec-story-trust__item {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 13px; color: var(--pec-navy); line-height: 1.3;
+}
+.pec-story-trust__item svg { color: var(--pec-accent); flex: 0 0 auto; }
+
+/* Hero visual: framed photo placeholder */
+.pec-story-hero__media { position: relative; animation: pec-float 6s ease-in-out infinite; }
+.pec-story-hero__frame {
+  position: relative;
+  aspect-ratio: 4/5;
+  width: 100%;
+  border-radius: var(--pec-r-xl);
+  overflow: hidden;
+  background: linear-gradient(140deg, #B8DAEB 0%, #7FB8D6 55%, #0A2C48 100%);
+  box-shadow: var(--pec-shadow-lg);
+}
+.pec-story-hero__frame::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 60% 30%, rgba(255,255,255,0.22), transparent 55%),
+    radial-gradient(ellipse at 30% 80%, rgba(10,44,72,0.3), transparent 55%);
+}
+.pec-story-hero__frame-stamp {
+  position: absolute; left: 24px; bottom: 24px; z-index: 2;
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: var(--pec-r-lg);
+  box-shadow: 0 24px 48px -16px rgba(0,0,0,0.35);
+  max-width: 260px;
+  animation: pec-fade-in 0.7s 0.4s var(--pec-ease) both;
+}
+.pec-story-hero__stamp-top {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--pec-accent);
+  margin-bottom: 4px;
+}
+.pec-story-hero__stamp-big {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px; font-weight: 800; color: var(--pec-ink); line-height: 1.15;
+}
+.pec-story-hero__stamp-sub { display: block; font-size: 13px; color: var(--pec-muted); margin-top: 4px; }
+
+/* Narrative sections: editorial longform rhythm */
+.pec-narrative { padding: var(--pec-sec-pad-y) 0; background: #fff; }
+.pec-narrative--tint { background: var(--pec-sky-bg); }
+.pec-narrative .pec-wrap { max-width: 880px; }
+.pec-narrative__body {
+  margin-top: 40px;
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--pec-ink-2);
+}
+.pec-narrative__body p { margin: 0 0 24px; }
+.pec-narrative__body p:last-child { margin-bottom: 0; }
+.pec-narrative__body strong { color: var(--pec-ink); font-weight: 700; }
+
+/* Pull quotes: visually distinct, editorial */
+.pec-pullquote {
+  max-width: 820px; margin: 48px auto 8px;
+  padding: 40px 44px;
+  background: linear-gradient(135deg, #0E3A5F, #07213A);
+  border-radius: var(--pec-r-xl);
+  color: #fff;
+  position: relative;
+  box-shadow: var(--pec-shadow);
+  overflow: hidden;
+}
+.pec-pullquote::before {
+  content: "\201C";
+  position: absolute; top: -30px; left: 24px;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 200px; line-height: 1;
+  color: rgba(127,184,214,0.18);
+  font-weight: 800;
+  pointer-events: none;
+}
+.pec-pullquote::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 100% 100%, rgba(196,30,42,0.18), transparent 55%);
+  pointer-events: none;
+}
+.pec-pullquote__text {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 600; line-height: 1.35;
+  font-style: italic;
+  margin: 0;
+  position: relative;
+  text-wrap: balance;
+}
+.pec-pullquote__text em {
+  color: var(--pec-sky);
+  font-style: italic;
+}
+.pec-pullquote__cite {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--pec-sky);
+  position: relative;
+}
+.pec-pullquote__cite::before {
+  content: ""; width: 24px; height: 1px; background: currentColor;
+}
+
+/* Owners: large editorial cards */
+.pec-owners { padding: var(--pec-sec-pad-y) 0; background: #fff; }
+.pec-owner {
+  display: grid; grid-template-columns: 1fr 1.3fr; gap: 56px; align-items: center;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--pec-line);
+}
+.pec-owner:last-of-type { border-bottom: none; }
+.pec-owner--alt { grid-template-columns: 1.3fr 1fr; }
+.pec-owner--alt .pec-owner__portrait { order: 2; }
+.pec-owner__portrait {
+  position: relative;
+  aspect-ratio: 4/5;
+  width: 100%;
+  border-radius: var(--pec-r-xl);
+  overflow: hidden;
+  background: linear-gradient(145deg, #0E3A5F 0%, #07213A 100%);
+  box-shadow: var(--pec-shadow);
+}
+.pec-owner__portrait::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(127,184,214,0.25), transparent 55%);
+}
+.pec-owner__portrait-initials {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(80px, 10vw, 140px); font-weight: 700;
+  color: #7FB8D6;
+  letter-spacing: -0.02em;
+  user-select: none;
+  z-index: 1;
+}
+.pec-owner__portrait-tag {
+  position: absolute; left: 20px; bottom: 20px; z-index: 2;
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--pec-navy);
+  box-shadow: var(--pec-shadow-sm);
+}
+.pec-owner__copy { }
+.pec-owner__role {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--pec-accent);
+  margin-bottom: 14px;
+}
+.pec-owner__role::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+.pec-owner__name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(28px, 2.6vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--pec-ink);
+  margin: 0 0 18px;
+}
+.pec-owner__bio {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--pec-ink-2);
+  margin: 0 0 20px;
+}
+.pec-owner__quote {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--pec-navy);
+  padding: 16px 0 16px 24px;
+  border-left: 3px solid var(--pec-accent);
+  margin: 20px 0;
+}
+.pec-owners__link {
+  text-align: center; margin-top: 40px;
+}
+
+/* Practice principles: 2x2 grid */
+.pec-principles { padding: var(--pec-sec-pad-y) 0; background: var(--pec-sky-bg); }
+.pec-principles__grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.pec-principle {
+  background: #fff;
+  border: 1px solid var(--pec-line);
+  border-radius: var(--pec-r-lg);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s var(--pec-ease), box-shadow .4s ease, border-color .3s ease;
+}
+.pec-principle::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--pec-accent), var(--pec-sky));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .5s var(--pec-ease);
+}
+.pec-principle:hover { transform: translateY(-6px); box-shadow: var(--pec-shadow); border-color: var(--pec-sky-2); }
+.pec-principle:hover::before { transform: scaleX(1); }
+.pec-principle__num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+  color: var(--pec-navy);
+  padding: 6px 12px;
+  background: var(--pec-sky-bg);
+  border-radius: 100px;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+.pec-principle h3 { margin-bottom: 14px; font-size: 22px; line-height: 1.3; }
+.pec-principle p { color: var(--pec-muted); margin: 0; font-size: 16px; line-height: 1.65; }
+
+/* Community: centered editorial block with large pull quote */
+.pec-community {
+  padding: var(--pec-sec-pad-y) 0;
+  background: #fff;
+  text-align: center;
+}
+.pec-community .pec-wrap { max-width: 860px; }
+.pec-community p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--pec-ink-2);
+  margin: 20px 0;
+}
+
+/* Editorial: lead paragraph after H2 */
+.pec-lead {
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--pec-ink-2);
+  margin: 20px 0 0;
+  max-width: 780px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .pec-story-hero__grid { grid-template-columns: 1fr; gap: 48px; }
+  .pec-owner { grid-template-columns: 1fr; gap: 32px; padding: 32px 0; }
+  .pec-owner--alt { grid-template-columns: 1fr; }
+  .pec-owner--alt .pec-owner__portrait { order: 0; }
+  .pec-principles__grid { grid-template-columns: 1fr; }
+  .pec-pullquote { padding: 32px 28px; }
+}
+@media (max-width: 640px) {
+  .pec-story-hero { padding: 48px 0 64px; }
+  .pec-story-hero__frame-stamp { left: 16px; bottom: 16px; max-width: 200px; padding: 14px 16px; }
+  .pec-narrative__body { font-size: 17px; }
+  .pec-principle { padding: 28px; }
+}
