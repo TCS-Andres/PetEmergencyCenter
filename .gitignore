@@ -7,6 +7,6 @@
 !.env.example
 
 # Internal source docs (not part of the web build)
-PEC_Homepage_Copy.docx
+PEC_*.docx
 PEC_MasterBrain_Document*.pdf
 Pet_Emergency_Center_Guiding_Principles.pdf

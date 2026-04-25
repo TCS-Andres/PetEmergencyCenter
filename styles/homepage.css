@@ -662,6 +662,20 @@ img { max-width: 100%; display: block; }
   border-radius: var(--pec-r-lg);
   padding: 0;
   overflow: hidden;
+  position: relative;
+}
+.pec-tele__turtle {
+  position: absolute; right: -28px; bottom: -22px;
+  width: 160px; height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 16px 18px rgba(0,0,0,0.45));
+  transform: rotate(-6deg);
+  z-index: 2;
+  animation: pec-turtle-amble 8s ease-in-out infinite;
+}
+@keyframes pec-turtle-amble {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50%      { transform: rotate(-4deg) translateY(-4px); }
 }
 .pec-tele__side-img {
   display: block;
@@ -687,6 +701,51 @@ img { max-width: 100%; display: block; }
    ANIMALS
 ================================================ */
 .pec-animals { padding: var(--pec-sec-pad-y) 0; background: var(--pec-sky-bg); }
+
+/* Featured group cutout — the iconic recognition image */
+.pec-animals__feature {
+  display: grid; grid-template-columns: 1fr 1.15fr;
+  gap: 56px; align-items: center;
+  margin-bottom: 56px;
+}
+.pec-animals__feature .pec-section-head { margin-bottom: 0; max-width: none; }
+.pec-animals__hero {
+  position: relative;
+  background: linear-gradient(140deg, #B8DAEB 0%, #7FB8D6 55%, #0E3A5F 100%);
+  border-radius: var(--pec-r-xl);
+  padding: 36px 32px 0;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: center;
+  box-shadow: var(--pec-shadow-lg);
+}
+.pec-animals__hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.18), transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(10,44,72,0.4), transparent 65%);
+  pointer-events: none;
+}
+.pec-animals__hero img {
+  position: relative;
+  width: 92%; height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 32px rgba(7,33,58,0.45));
+  animation: pec-float 7s ease-in-out infinite;
+}
+.pec-animals__chip {
+  position: absolute; top: 20px; left: 20px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #fff;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 8px 14px; border-radius: 100px;
+  z-index: 2;
+}
+
 .pec-animals__grid {
   display: grid; grid-template-columns: repeat(7, 1fr); gap: 16px;
 }
@@ -1106,6 +1165,8 @@ body.pec-menu-open { overflow: hidden; }
   .pec-nav__burger { display: inline-flex; }
   .pec-empathy__grid { grid-template-columns: 1fr; gap: 36px; }
   .pec-empathy__media { max-width: 560px; margin: 0 auto; width: 100%; }
+  .pec-animals__feature { grid-template-columns: 1fr; gap: 32px; }
+  .pec-animals__hero { aspect-ratio: 4/3; max-width: 600px; margin: 0 auto; }
 }
 
 /* Small tablet / large phone */
