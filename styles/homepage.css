@@ -1383,6 +1383,91 @@ html { scroll-behavior: smooth; scroll-padding-top: 120px; }
 }
 
 /* ================================================
+   PATIENTS MARQUEE — continuous photo strip
+================================================ */
+.pec-marquee {
+  padding: 72px 0 80px;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.pec-marquee__head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  padding: 0 var(--pec-pad);
+}
+.pec-marquee__head .pec-eyebrow { justify-content: center; }
+.pec-marquee__head h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(24px, 2.4vw, 32px); font-weight: 800;
+  letter-spacing: -0.02em; line-height: 1.2;
+  color: var(--pec-ink); margin: 0;
+}
+.pec-marquee__viewport {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.pec-marquee__strip {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: pec-marquee-scroll 50s linear infinite;
+  will-change: transform;
+}
+.pec-marquee__viewport:hover .pec-marquee__strip { animation-play-state: paused; }
+.pec-marquee__item {
+  flex: 0 0 auto;
+  width: 220px; height: 220px;
+  border-radius: var(--pec-r-lg);
+  overflow: hidden;
+  background: var(--pec-sky-bg);
+  box-shadow: var(--pec-shadow-sm);
+  position: relative;
+  transition: transform .4s var(--pec-ease);
+}
+.pec-marquee__item:hover { transform: translateY(-4px); }
+.pec-marquee__item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.pec-marquee__caption {
+  position: absolute; left: 12px; bottom: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #fff;
+  background: rgba(7,33,58,0.6);
+  backdrop-filter: blur(4px);
+  padding: 5px 10px; border-radius: 100px;
+}
+@keyframes pec-marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+@media (max-width: 900px) {
+  .pec-marquee { padding: 56px 0 64px; }
+  .pec-marquee__item { width: 180px; height: 180px; }
+  .pec-marquee__strip { animation-duration: 38s; gap: 16px; }
+  .pec-marquee__head { margin-bottom: 28px; }
+}
+@media (max-width: 640px) {
+  .pec-marquee { padding: 48px 0 56px; }
+  .pec-marquee__item { width: 144px; height: 144px; border-radius: var(--pec-r); }
+  .pec-marquee__strip { animation-duration: 30s; gap: 12px; }
+  .pec-marquee__caption { font-size: 9px; padding: 4px 8px; left: 8px; bottom: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pec-marquee__strip { animation: none; }
+  .pec-marquee__viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .pec-marquee__item { scroll-snap-align: start; }
+}
+
+/* ================================================
    EDITORIAL IMAGERY
 ================================================ */
 .pec-frame-img { width: 100%; height: 100%; display: block; object-fit: cover; position: absolute; inset: 0; }

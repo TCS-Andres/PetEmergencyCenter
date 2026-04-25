@@ -1,0 +1,61 @@
+{
+  "_notes": "Additional pet portraits for marquee variety. Same look as the main species set so they sit together.",
+  "style_suffix": "studio-style soft natural window light, head-and-shoulders portrait composition, sharp focus on the eyes, gentle calm expression, fur or skin texture clearly detailed, pale sky-blue and cream backdrop with smooth gradient, no text or props or accessories, clean composition that reads at thumbnail size, warm documentary tone, never stock-glossy, 35mm prime lens look, subtle film grain",
+
+  "images": [
+    {
+      "id": "species-puppy",
+      "path": "img/species/puppy.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A small fluffy golden retriever puppy held in two cupped hands, head visible, soft trusting eyes, pink nose, downy fur, clean pale sky-blue gradient background, gentle warm natural light"
+    },
+    {
+      "id": "species-kitten",
+      "path": "img/species/kitten.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A small orange tabby kitten sitting upright, head and shoulders, big curious blue-green eyes, soft fluffy fur, gentle expression, clean pale sky-blue gradient background, soft warm natural light"
+    },
+    {
+      "id": "species-cockatiel",
+      "path": "img/species/cockatiel.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A pet cockatiel parrot perched, head turned three-quarter to camera, signature yellow head crest and orange cheek patches, gray body feathers, clean pale sky-blue gradient background, soft warm natural light"
+    },
+    {
+      "id": "species-hamster",
+      "path": "img/species/hamster.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A small Syrian hamster sitting upright, head and shoulders portrait, holding paws together, dark beady eyes, soft golden fur, clean pale sky-blue gradient background, soft warm natural light"
+    },
+    {
+      "id": "species-iguana",
+      "path": "img/species/iguana.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A pet green iguana in profile, head and front shoulder visible, vivid green-and-orange scales, calm posture on a neutral light wood perch, clean pale sky-blue gradient background, soft warm natural light, lizard skin texture detailed"
+    },
+    {
+      "id": "species-chicken",
+      "path": "img/species/chicken.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A backyard pet chicken (silkie or buff orpington breed) head and chest portrait, soft fluffy feathers, alert eye, gentle expression, clean pale sky-blue gradient background, soft warm natural light"
+    }
+  ]
+}
