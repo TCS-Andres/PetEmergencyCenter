@@ -747,17 +747,23 @@ img { max-width: 100%; display: block; }
 }
 
 .pec-animals__grid {
-  display: grid; grid-template-columns: repeat(7, 1fr); gap: 16px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+}
+.pec-animal {
+  flex: 1 1 calc(20% - 16px);
+  min-width: 168px;
+  max-width: 220px;
 }
 .pec-animal {
   background: #fff;
   border: 1px solid var(--pec-line);
   border-radius: var(--pec-r-lg);
-  padding: 32px 16px 24px;
+  padding: 12px 12px 16px;
   text-align: center;
   color: var(--pec-ink-2);
   transition: transform .35s var(--pec-ease), border-color .3s ease, color .3s ease, box-shadow .3s ease;
   cursor: default;
+  overflow: hidden;
 }
 .pec-animal:hover {
   transform: translateY(-6px);
@@ -765,15 +771,37 @@ img { max-width: 100%; display: block; }
   color: var(--pec-navy);
   box-shadow: var(--pec-shadow);
 }
+.pec-animal:hover .pec-animal__photo img { transform: scale(1.08); }
 .pec-animal:hover .pec-animal__art { transform: scale(1.12) rotate(-6deg); }
 .pec-animal__art {
-  margin-bottom: 16px; display: flex; justify-content: center;
+  margin: 12px 0 14px; display: flex; justify-content: center;
   transition: transform .5s var(--pec-ease);
+}
+.pec-animal__photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: var(--pec-r);
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #E8F2F8 0%, #B8DAEB 100%);
+  position: relative;
+}
+.pec-animal__photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s var(--pec-ease);
+}
+.pec-animal__photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(7,33,58,0.08));
+  pointer-events: none;
 }
 .pec-animal__name {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; font-size: 14px; letter-spacing: 0.01em;
   color: var(--pec-ink);
+  padding: 0 4px;
 }
 
 /* ================================================
@@ -1153,7 +1181,7 @@ body.pec-menu-open { overflow: hidden; }
   .pec-svc:nth-last-child(-n+3) { border-bottom: 1px solid var(--pec-line); }
   .pec-svc:nth-last-child(-n+2) { border-bottom: none; }
   .pec-tele__grid { grid-template-columns: 1fr; gap: 36px; }
-  .pec-animals__grid { grid-template-columns: repeat(4, 1fr); }
+  .pec-animal { flex: 1 1 calc(33.333% - 16px); min-width: 150px; }
   .pec-reviews__grid { grid-template-columns: repeat(2, 1fr); }
   .pec-area__grid { grid-template-columns: 1fr; gap: 36px; }
   .pec-area__cities { padding-top: 0; }
@@ -1222,8 +1250,8 @@ body.pec-menu-open { overflow: hidden; }
   .pec-tele__credit { padding: 18px 20px; font-size: 15px; }
   .pec-tele__side-head { margin: 22px 22px 18px; }
   .pec-tele__side .pec-tele__list { padding: 0 22px 22px; }
-  .pec-animals__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .pec-animal { padding: 22px 12px 18px; }
+  .pec-animals__grid { gap: 12px; }
+  .pec-animal { flex: 1 1 calc(50% - 12px); min-width: 0; padding: 10px 10px 14px; }
   .pec-reviews__grid { grid-template-columns: 1fr; }
   .pec-review { padding: 24px; }
   .pec-faq__q { font-size: 16px; gap: 12px; }

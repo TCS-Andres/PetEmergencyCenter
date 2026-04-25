@@ -1,0 +1,88 @@
+{
+  "_notes": "Per-species tile photos for the homepage Animals We Treat section. Square 1:1, soft natural-light pet portraits with a clean pale-sky background that reads as one consistent set across the grid. Run with `node scripts/generate-images.mjs img-plan-species.json`.",
+  "style_suffix": "studio-style soft natural window light, head-and-shoulders portrait composition, sharp focus on the eyes, gentle calm expression, fur or skin texture clearly detailed, pale sky-blue and cream backdrop with smooth gradient, no text or props or accessories, clean composition that reads at thumbnail size, warm documentary tone, never stock-glossy, 35mm prime lens look, subtle film grain",
+
+  "images": [
+    {
+      "id": "species-dog",
+      "path": "img/species/dog.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A friendly mixed-breed adult dog facing forward, head and shoulders portrait, alert ears, soft trusting eyes looking just past the camera, clean pale sky-blue gradient background, gentle warm natural light from the side"
+    },
+    {
+      "id": "species-cat",
+      "path": "img/species/cat.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A calm tabby house cat sitting upright, head and shoulders portrait, gold-green eyes looking gently at the camera, whiskers visible, clean pale sky-blue gradient background, soft warm natural light"
+    },
+    {
+      "id": "species-rabbit",
+      "path": "img/species/rabbit.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A fluffy lop-eared pet rabbit sitting calmly, head and upper body portrait, dark eyes, soft long ears draped naturally, clean pale sky-blue gradient background, gentle warm natural light, fur texture detailed"
+    },
+    {
+      "id": "species-ferret",
+      "path": "img/species/ferret.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A curious sable-colored pet ferret upright on hind legs or sitting alert, head and shoulders portrait, bright eyes, classic dark mask markings, clean pale sky-blue gradient background, soft warm natural light"
+    },
+    {
+      "id": "species-reptile",
+      "path": "img/species/reptile.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A bearded dragon lizard in profile, head clearly visible, calm posture on a neutral perch, scaly skin texture detailed, clean pale sky-blue gradient background, soft warm natural light"
+    },
+    {
+      "id": "species-bird",
+      "path": "img/species/bird.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A colorful green-cheeked conure parrot perched, head turned three-quarter toward the camera, bright eye and feather detail, clean pale sky-blue gradient background, soft warm natural light"
+    },
+    {
+      "id": "species-pocket",
+      "path": "img/species/pocket.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A pet guinea pig sitting upright, head and shoulders portrait, soft fur with mixed brown and white patches, dark eyes, gentle expression, clean pale sky-blue gradient background, soft warm natural light"
+    },
+    {
+      "id": "species-farm",
+      "path": "img/species/farm.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A young pet goat or miniature pig in head-and-shoulders portrait, alert ears, gentle eyes, soft fur or skin detail, clean pale sky-blue gradient background, soft warm natural light, conveys friendly small farm animal"
+    },
+    {
+      "id": "species-exotic",
+      "path": "img/species/exotic.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A young pet otter in head-and-shoulders portrait, dark wet whiskers, bright curious eyes, smooth dark fur catching highlights, clean pale sky-blue gradient background, soft warm natural light, conveys exotic cherished pet"
+    }
+  ]
+}
