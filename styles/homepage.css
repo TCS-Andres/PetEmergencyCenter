@@ -91,6 +91,75 @@ img { max-width: 100%; display: block; }
   to { background-size: 100% 100%; }
 }
 
+/* ================================================
+   Instagram follow section
+================================================ */
+.pec-insta {
+  padding: 80px 0;
+  background: #fff;
+  text-align: center;
+}
+.pec-insta__inner { max-width: 1100px; margin: 0 auto; padding: 0 var(--pec-pad); }
+.pec-insta__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  color: #fff;
+  background: linear-gradient(45deg, #FEDA77 0%, #F58529 25%, #DD2A7B 50%, #8134AF 75%, #515BD4 100%);
+  box-shadow: 0 8px 24px -8px rgba(221,42,123,0.45);
+}
+.pec-insta__handle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: #DD2A7B;
+  margin: 6px 0 0;
+  letter-spacing: -0.01em;
+}
+.pec-insta__handle a { color: inherit; text-decoration: none; }
+.pec-insta__handle a:hover { text-decoration: underline; }
+.pec-insta__sub {
+  max-width: 580px; margin: 16px auto 0;
+  color: var(--pec-ink-2); font-size: 17px; line-height: 1.6;
+}
+.pec-insta__cta { margin-top: 28px; }
+
+/* Instagram feed grid (placeholders ready for a feed widget) */
+.pec-insta__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin: 40px auto 32px;
+  max-width: 980px;
+}
+.pec-insta__tile {
+  position: relative;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FEDA77 0%, #F58529 30%, #DD2A7B 60%, #8134AF 90%);
+  display: block;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.pec-insta__tile::after {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(0,0,0,0.35);
+  transition: background .2s;
+}
+.pec-insta__tile:hover { transform: translateY(-2px); box-shadow: var(--pec-shadow); }
+.pec-insta__tile:hover::after { background: rgba(0,0,0,0.15); }
+.pec-insta__tile-icon {
+  position: absolute; inset: 0; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; opacity: 0.9;
+}
+
+@media (max-width: 720px) {
+  .pec-insta__grid { grid-template-columns: repeat(3, 1fr); }
+  .pec-insta { padding: 56px 0; }
+}
+
 .pec-h2 { font-size: clamp(30px, 3.4vw, 48px); line-height: 1.08; letter-spacing: -0.02em; }
 .pec-h2--light { color: #fff; }
 
