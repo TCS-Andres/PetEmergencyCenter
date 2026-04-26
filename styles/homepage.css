@@ -237,6 +237,29 @@ img { max-width: 100%; display: block; }
 
 .pec-btn--phone { font-weight: 800; font-size: 17px; }
 
+/* Nav address pill — opens Google Maps */
+.pec-btn--address {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 700;
+  color: var(--pec-ink-2);
+  background: var(--pec-cream);
+  border: 1px solid var(--pec-line);
+  padding: 8px 14px;
+  border-radius: 100px;
+  line-height: 1.2;
+  transition: color .15s, background .15s, border-color .15s;
+  text-align: left;
+}
+.pec-btn--address:hover {
+  color: var(--pec-accent);
+  background: #fff;
+  border-color: var(--pec-accent);
+}
+.pec-btn--address svg { color: var(--pec-accent); flex: 0 0 auto; }
+.pec-btn--address__lines { display: flex; flex-direction: column; gap: 2px; line-height: 1.15; }
+.pec-btn--address__top { font-weight: 800; color: var(--pec-ink); letter-spacing: -0.005em; }
+.pec-btn--address__bot { font-weight: 600; font-size: 11px; color: var(--pec-muted); letter-spacing: 0.04em; text-transform: uppercase; }
+
 /* ================================================
    TOP NAV
 ================================================ */
@@ -1277,6 +1300,7 @@ body.pec-menu-open { overflow: hidden; }
   .pec-nav__inner { padding: 12px 16px; gap: 16px; }
   .pec-nav__cta .pec-btn--phone span { display: none; }
   .pec-nav__cta .pec-btn--phone { padding: 8px 10px; }
+  .pec-btn--address { display: none; }
   .pec-logo__img { height: 32px; }
   .pec-logo__tag { display: none; }
   .pec-openstrip { font-size: 12px; padding: 7px 14px; }
