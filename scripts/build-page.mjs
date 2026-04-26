@@ -97,7 +97,13 @@ function template(p) {
   else if (SERVICE_LINKS.find(l => l.slug === slug)) openWhich = 'services';
   else if (RESOURCE_LINKS.find(l => l.slug === slug)) openWhich = 'resources';
 
-  const extraStyles = (p.extraStyles || []).map(s => `<link rel="stylesheet" href="../${s}">`).join('\n');
+  // nested-slug support: '../' for one level, '../../' for two levels, etc.
+  const depth = slug.split('/').filter(Boolean).length;
+  const up = '../'.repeat(depth);
+
+  const extraStyles = (p.extraStyles || []).map(s => `<link rel="stylesheet" href="${up}${s}">`).join('\n');
+  const extraHead = p.extraHead || '';
+  const robotsMeta = p.robots ? `<meta name="robots" content="${p.robots}">\n` : '';
   const jsonLdBlock = p.jsonLd ? `\n<script type="application/ld+json">\n${JSON.stringify(p.jsonLd, null, 2)}\n</script>` : '';
   const extraSymbols = p.extraSymbols || '';
 
@@ -112,19 +118,19 @@ function template(p) {
 <meta property="og:title" content="${p.ogTitle || p.title}">
 <meta property="og:description" content="${p.ogDescription || p.description}">
 <meta property="og:type" content="${p.ogType || 'website'}">
-
+${robotsMeta}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../styles/homepage.css">
-${extraStyles}${jsonLdBlock}
+<link rel="stylesheet" href="${up}styles/homepage.css">
+${extraStyles}${extraHead}${jsonLdBlock}
 </head>
 <body>
 
 <div id="pec-preloader" class="pec-preloader" role="status" aria-label="Loading Pet Emergency Center">
   <div class="pec-preloader__inner">
-    <img src="../pec-logo.png" alt="Pet Emergency Center" class="pec-preloader__logo">
+    <img src="${up}pec-logo.png" alt="Pet Emergency Center" class="pec-preloader__logo">
     <svg class="pec-preloader__ecg" viewBox="0 0 260 48" aria-hidden="true">
       <path class="track" d="M 0 24 L 260 24"/>
       <path class="trace" d="M 0 24 L 70 24 L 82 24 L 92 8 L 104 40 L 116 18 L 128 24 L 260 24"/>
@@ -143,7 +149,7 @@ ${extraStyles}${jsonLdBlock}
 <header class="pec-nav">
   <div class="pec-nav__inner">
     <a href="/" class="pec-logo" aria-label="Pet Emergency Center home">
-      <img src="../pec-logo.png" alt="Pet Emergency Center" class="pec-logo__img" width="280" height="38">
+      <img src="${up}pec-logo.png" alt="Pet Emergency Center" class="pec-logo__img" width="280" height="38">
       <span class="pec-logo__tag">Fort Lauderdale · Since 1982</span>
     </a>
 
@@ -180,7 +186,7 @@ ${renderDesktopDropdown('Resources', RESOURCE_LINKS, slug)}
 <div id="pec-mobile-menu" class="pec-mobile-menu" role="dialog" aria-modal="true" aria-label="Main menu">
   <div class="pec-mobile-menu__top">
     <a href="/" class="pec-mobile-menu__logo" aria-label="Pet Emergency Center home">
-      <img src="../pec-logo.png" alt="Pet Emergency Center">
+      <img src="${up}pec-logo.png" alt="Pet Emergency Center">
     </a>
     <button type="button" class="pec-mobile-menu__close" aria-label="Close menu">
       <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
@@ -214,7 +220,7 @@ ${p.main}
   <div class="pec-wrap pec-footer__top">
     <div class="pec-footer__brand">
       <div class="pec-logo pec-logo--footer">
-        <img src="../pec-logo.png" alt="Pet Emergency Center" class="pec-logo__img pec-logo__img--dark" width="300" height="40">
+        <img src="${up}pec-logo.png" alt="Pet Emergency Center" class="pec-logo__img pec-logo__img--dark" width="300" height="40">
         <span class="pec-logo__tag">Compassionate care. Always here.</span>
       </div>
       <p class="pec-footer__blurb">Independently &amp; locally owned emergency veterinary care in Fort Lauderdale, Florida, for over 40 years.</p>
@@ -282,7 +288,7 @@ ${p.main}
   </a>
 </div>
 
-<script src="../scripts/homepage.js" defer></script>
+<script src="${up}scripts/homepage.js" defer></script>
 </body>
 </html>
 `;

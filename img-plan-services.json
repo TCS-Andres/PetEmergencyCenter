@@ -1,0 +1,69 @@
+{
+  "_notes": "Service-specific hero imagery for pages that currently reuse generic photos. Replace home-empathy.jpg / home-services-ambient.jpg / home-hero.jpg / story-community.jpg fallbacks with images that match each service's actual scene.",
+  "style_suffix": "warm natural daylight, documentary photography, unposed candid feel, Fort Lauderdale Florida setting, calm and trustworthy tone, soft shallow depth of field, navy and sky-blue ambient palette, muted cool cream background tones, authentic and lived-in, never stock-photo glossy, never oversaturated, 35mm prime lens look, subtle film grain, high detail on animal fur or skin texture",
+  "images": [
+    {
+      "id": "svc-pharmacy",
+      "path": "img/services/pharmacy.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A veterinary pharmacy counter in a small independent emergency clinic. A veterinarian's hands gently count tablets onto a clean stainless tray with a pill counter. A row of amber prescription bottles sits in soft focus behind. A clean white label printer is just visible at the edge. Warm natural light from a side window. Conveys preparedness, accuracy, and care. No human face, no patient visible. Tight, intimate composition focused on the hands and pills."
+    },
+    {
+      "id": "svc-diagnostics",
+      "path": "img/services/diagnostics.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "Close shot of a veterinarian's gloved hands gently positioning an ultrasound probe on a calm small dog's belly during a same-visit diagnostic exam. The ultrasound monitor screen is partially visible to the side, glowing softly. Warm clinic light, blue accent on the monitor. The dog looks relaxed and sleepy. Conveys advanced on-site diagnostics handled with gentleness. Documentary candid feel."
+    },
+    {
+      "id": "svc-pain",
+      "path": "img/services/pain-management.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "An older medium-sized dog resting peacefully on a thick padded recovery bed in a softly lit clinic recovery room. A folded warm blanket is draped over the dog's hips. The dog's eyes are softly closed in calm rest, breathing easy. A veterinarian's hand rests gently on the dog's shoulder, providing reassurance. Warm amber light, navy accent wall in soft focus. Conveys comfort, dignity, and pain relief. Quiet, tender, no urgency."
+    },
+    {
+      "id": "svc-payment",
+      "path": "img/services/payment-plans.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A veterinarian sits across a small consult-room table from a pet owner, both leaning slightly forward in conversation. A clipboard with a treatment estimate sits between them, the vet's pen pointing to a line item. The pet owner's hand rests gently on a calm dog at her side. Warm clinic light, soft navy accents. Conveys honest, transparent conversation about care costs without commercial or financial-clinic feel. No money, no credit cards, no calculator visible. Faces partially turned, intimate documentary framing."
+    },
+    {
+      "id": "svc-common-emergencies",
+      "path": "img/services/common-emergencies.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A veterinarian and a veterinary technician moving with steady purpose through a softly lit emergency clinic hallway. The vet carries a small terrier wrapped in a soft towel, the technician walks alongside ready to assist. Both wear navy scrubs. The hallway has clean white walls and warm overhead lighting. Conveys controlled urgency and a coordinated team response, not panic. Captured from slightly behind, motion blur subtle on legs."
+    },
+    {
+      "id": "svc-emergency-tips",
+      "path": "img/services/emergency-tips.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A pet owner sitting on a Florida home's tiled floor next to a large calm dog, gently checking the dog's gums and breathing while holding her phone in the other hand looking at instructions. Soft afternoon light through a sliding glass door, palm shadows on the floor. A water bowl and a folded towel beside her. Conveys a calm, prepared owner doing the right things at home before help arrives. Documentary, candid."
+    },
+    {
+      "id": "svc-referring-hospitals",
+      "path": "img/services/referring-hospitals.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "Two veterinarians in navy scrubs in a quiet clinic hallway, one handing a manila patient folder to the other while they speak softly. One holds a stethoscope. Both look professional and at ease. Warm hallway light, framed certificates softly visible on the wall behind. Conveys trusted vet-to-vet collaboration during a referral handoff. No patient visible, no logos."
+    }
+  ]
+}
