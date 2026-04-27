@@ -1173,7 +1173,8 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.01em;
 }
 .pec-sticky-mobile__btn--call { background: var(--pec-accent); color: #fff; }
-.pec-sticky-mobile__btn--tele { background: #fff; color: var(--pec-ink); border-left: 1px solid var(--pec-line); }
+.pec-sticky-mobile__btn--tele { background: var(--pec-sky-bg); color: var(--pec-navy); }
+.pec-sticky-mobile__btn--tele svg { color: var(--pec-navy); }
 
 /* Reserve space at the bottom of every page on mobile so content does
    not sit underneath the sticky bar. ~52px button + ~12px breathing
