@@ -45,6 +45,27 @@
     menu.querySelectorAll('a[href]').forEach(function (a) { a.addEventListener('click', close); });
   })();
 
+  // ---- Sticky mobile bar: track iOS Safari's visual viewport bottom ----
+  // iOS Safari's URL bar collapses on scroll-down. position: fixed; bottom: 0
+  // is anchored to the LAYOUT viewport, so the bar appears to "float" mid-screen
+  // until the toolbar fully transitions. We use the Visual Viewport API to
+  // translate the bar in lockstep with the visible viewport.
+  (function initStickyBar() {
+    var bar = document.querySelector('.pec-sticky-mobile');
+    if (!bar || !window.visualViewport) return;
+    var vv = window.visualViewport;
+    function update() {
+      var offset = window.innerHeight - vv.height - vv.offsetTop;
+      // Clamp to 0 minimum so the bar never moves UP off the bottom
+      if (offset < 0) offset = 0;
+      bar.style.transform = 'translateY(' + (-offset) + 'px)';
+    }
+    vv.addEventListener('resize', update);
+    vv.addEventListener('scroll', update);
+    window.addEventListener('orientationchange', update);
+    update();
+  })();
+
   // ---- Nav scroll state + sticky telehealth float ----
   var nav = document.querySelector('.pec-nav');
   var teleFloat = document.querySelector('.pec-tele-float');
