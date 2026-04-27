@@ -43,6 +43,8 @@ const RESOURCE_LINKS = [
   { href: '/pet-emergency-tips/', label: 'Pet Emergency Tips', slug: 'pet-emergency-tips' },
   { href: '/seasonal-tip/', label: 'Seasonal Health Tip', slug: 'seasonal-tip' },
   { href: '/payment-plans/', label: 'Payment Plans', slug: 'payment-plans' },
+  { href: '/pet-rescue-groups/', label: 'Pet Rescue Groups', slug: 'pet-rescue-groups' },
+  { href: '/educational-links/', label: 'Educational Links', slug: 'educational-links' },
   { href: '/blog/', label: 'Blog', slug: 'blog' },
 ];
 
