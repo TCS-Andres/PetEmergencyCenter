@@ -45,6 +45,7 @@ const RESOURCE_LINKS = [
   { href: '/payment-plans/', label: 'Payment Plans', slug: 'payment-plans' },
   { href: '/pet-rescue-groups/', label: 'Pet Rescue Groups', slug: 'pet-rescue-groups' },
   { href: '/educational-links/', label: 'Educational Links', slug: 'educational-links' },
+  { href: '/referring-hospitals/', label: 'For Referring Vets', slug: 'referring-hospitals' },
   { href: '/blog/', label: 'Blog', slug: 'blog' },
 ];
 
