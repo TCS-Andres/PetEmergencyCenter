@@ -3,6 +3,24 @@
   "style_suffix": "warm natural daylight, documentary photography, unposed candid feel, Fort Lauderdale Florida setting, calm and trustworthy tone, soft shallow depth of field, navy and sky-blue ambient palette, muted cool cream background tones, authentic and lived-in, never stock-photo glossy, never oversaturated, 35mm prime lens look, subtle film grain, high detail on animal fur or skin texture",
   "images": [
     {
+      "id": "home-empathy-person",
+      "path": "img/home-empathy.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "3:2",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A close, intimate three-quarter portrait of a worried South Florida pet owner sitting in a quiet emergency clinic waiting area at night, holding her medium-sized adult dog gently in her lap. The dog is calm and leaning into her chest. Her hand rests reassuringly on the dog's back, her face is partially turned, looking down at her pet with a soft, concerned expression. Warm amber lamp light, navy accent wall softly out of focus behind her, an upholstered bench just visible at the edge of the frame. Documentary candid feel. The image should evoke a calm, vulnerable, hopeful moment — the second a worried family knows they are in good hands. No medical equipment visible. No clinical exam table. The mood is reassurance, not alarm."
+    },
+    {
+      "id": "svc-seasonal",
+      "path": "img/services/seasonal-tip.jpg",
+      "model": "nano-banana-pro",
+      "aspect_ratio": "4:5",
+      "resolution": "1K",
+      "output_format": "jpg",
+      "prompt": "A South Florida outdoor scene at golden hour: a calm golden retriever and a small mixed-breed dog standing on a sun-bleached wooden dock or sidewalk near palm trees, panting lightly in the heat. A water bowl sits beside them. A pet owner's hand is partially visible offering shade with a wide-brim hat. The light is hot but warm, palms cast soft shadows, the air feels humid. Conveys a Florida-specific seasonal awareness moment — heat, hurricane prep, outdoor risks — without being alarmist. Documentary candid, no faces, no logos."
+    },
+    {
       "id": "svc-pharmacy",
       "path": "img/services/pharmacy.jpg",
       "model": "nano-banana-pro",
