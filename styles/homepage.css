@@ -1162,6 +1162,9 @@ img { max-width: 100%; display: block; }
   background: #fff;
   border-top: 1px solid var(--pec-line);
   box-shadow: 0 -10px 30px -15px rgba(0,0,0,0.2);
+  /* Extend the white background through the iOS home-indicator area
+     so there is no visible gap when the address bar collapses on scroll. */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 .pec-sticky-mobile__btn {
   flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -1171,6 +1174,13 @@ img { max-width: 100%; display: block; }
 }
 .pec-sticky-mobile__btn--call { background: var(--pec-accent); color: #fff; }
 .pec-sticky-mobile__btn--tele { background: #fff; color: var(--pec-ink); border-left: 1px solid var(--pec-line); }
+
+/* Reserve space at the bottom of every page on mobile so content does
+   not sit underneath the sticky bar. ~52px button + ~12px breathing
+   room + the device safe-area inset. */
+@media (max-width: 899px) {
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+}
 
 @media (min-width: 900px) {
   .pec-sticky-mobile { display: none; }
