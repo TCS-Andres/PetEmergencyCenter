@@ -47,23 +47,49 @@
 
   // ---- Sticky mobile bar: track iOS Safari's visual viewport bottom ----
   // iOS Safari's URL bar collapses on scroll-down. position: fixed; bottom: 0
-  // is anchored to the LAYOUT viewport, so the bar appears to "float" mid-screen
-  // until the toolbar fully transitions. We use the Visual Viewport API to
-  // translate the bar in lockstep with the visible viewport.
+  // is anchored to the LAYOUT viewport, so during the URL-bar collapse animation
+  // the bar can appear to "hover" above the visible bottom. We compute the
+  // delta between layout and visual viewport bottoms and translate the bar
+  // every animation frame while scrolling.
   (function initStickyBar() {
     var bar = document.querySelector('.pec-sticky-mobile');
     if (!bar || !window.visualViewport) return;
     var vv = window.visualViewport;
-    function update() {
-      var offset = window.innerHeight - vv.height - vv.offsetTop;
-      // Clamp to 0 minimum so the bar never moves UP off the bottom
-      if (offset < 0) offset = 0;
-      bar.style.transform = 'translateY(' + (-offset) + 'px)';
+    var ticking = false;
+    var lastY = null;
+
+    function applyUpdate() {
+      ticking = false;
+      // Distance from layout viewport bottom to visual viewport bottom.
+      // Positive when visual is BELOW layout (rare). Negative when visual is
+      // ABOVE layout (URL bar visible -> visual is shorter than layout).
+      // Bar with position: fixed; bottom: 0 sits at layout bottom by default,
+      // so we translate UP by the gap to land on visual bottom.
+      var gap = window.innerHeight - (vv.offsetTop + vv.height);
+      // Update only if changed enough to matter — saves work and avoids jitter.
+      if (lastY !== null && Math.abs(gap - lastY) < 0.5) return;
+      lastY = gap;
+      bar.style.transform = gap === 0 ? '' : 'translateY(' + (-gap) + 'px)';
     }
-    vv.addEventListener('resize', update);
-    vv.addEventListener('scroll', update);
-    window.addEventListener('orientationchange', update);
-    update();
+
+    function request() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(applyUpdate);
+      }
+    }
+
+    // Visual viewport: fires on URL-bar collapse end and pinch-zoom.
+    vv.addEventListener('resize', request);
+    vv.addEventListener('scroll', request);
+    // Window scroll: fires on every scroll frame, catches URL-bar mid-transition.
+    window.addEventListener('scroll', request, { passive: true });
+    window.addEventListener('resize', request);
+    window.addEventListener('orientationchange', request);
+    // Touch events: catch the moment the URL bar starts collapsing on iOS.
+    document.addEventListener('touchmove', request, { passive: true });
+    document.addEventListener('touchend', request, { passive: true });
+    applyUpdate();
   })();
 
   // ---- Nav scroll state + sticky telehealth float ----
